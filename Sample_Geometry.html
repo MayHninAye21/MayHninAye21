@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta name="description" content="Use Viewer to start building new applications or easily embed Cesium into existing applications.">
+    <meta name="cesium-sandcastle-labels" content="Beginner, Showcases">
+    <title>Cesium Demo</title>
+    <script type="text/javascript" src="../Sandcastle-header.js"></script>
+    <script
+      type="text/javascript"
+      src="../CesiumUnminified/Cesium.js"
+      
+    ></script>
+
+  </head>
+  <body
+    class="sandcastle-loading"
+    data-sandcastle-bucket="bucket-requirejs.html"
+  >
+<style>
+      @import url(../templates/bucket.css);
+    </style>
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <div id="toolbar"></div>
+    <script id="cesium_sandcastle_script">
+function startup(Cesium) {
+    'use strict';
+//Sandcastle_Begin
+var viewer = new Cesium.Viewer("cesiumContainer");
+
+//Line
+var blackLine = viewer.entities.add({
+  name: "Route segment 1",
+  polyline: {
+    positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+      -75,
+      39,
+      50000,
+      -125,
+      39,
+      50000,
+    ]),
+    width: 6,
+    material: Cesium.Color.BLACK,
+  },
+});
+
+var blackLine = viewer.entities.add({
+  name: "Route segment 2",
+  polyline: {
+    positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+      -75,
+      39,
+      50000,
+      -125,
+      50,
+      50000,
+    ]),
+    width: 6,
+    material: Cesium.Color.BLACK,
+  },
+});
+
+var blackLine = viewer.entities.add({
+  name: "Route segment 3",
+  polyline: {
+    positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+      -75,
+      39,
+      50000,
+      -150,
+      65,
+      50000,
+    ]),
+    width: 6,
+    material: Cesium.Color.BLACK,
+  },
+});
+
+
+//Polygon
+var CORNFLOWERBLUECylinder = viewer.entities.add({
+  name: "Airspaces Class",
+  position: Cesium.Cartesian3.fromDegrees(-100.0, 40.0, 10000.0),
+  cylinder: {
+    length: 200000.0,
+    topRadius: 200000.0,
+    bottomRadius: 200000.0,
+    material: Cesium.Color.CORNFLOWERBLUE.withAlpha(0.7),
+    
+  },
+});
+
+var blueCylinder = viewer.entities.add({
+  name: "Airspaces Class",
+  position: Cesium.Cartesian3.fromDegrees(-110.0, 35.0, 50000.0),
+  cylinder: {
+    length: 250000.0,
+    topRadius: 300000.0,
+    bottomRadius: 300000.0,
+    material: Cesium.Color.BLUE.withAlpha(0.5),
+    
+  },
+});
+
+var DARKBLUECylinder = viewer.entities.add({
+  name: "Airspaces Class",
+  position: Cesium.Cartesian3.fromDegrees(-110.0, 45.0, 50000.0),
+  cylinder: {
+    length: 400000.0,
+    topRadius: 300000.0,
+    bottomRadius: 300000.0,
+    material: Cesium.Color.DARKBLUE.withAlpha(0.5),
+    
+  },
+});
+
+var DODGERBLUECylinder = viewer.entities.add({
+  name: "Airspaces Class",
+  position: Cesium.Cartesian3.fromDegrees(-122.0, 55.0, 50000.0),
+  cylinder: {
+    length: 250000.0,
+    topRadius: 200000.0,
+    bottomRadius: 200000.0,
+    material: Cesium.Color.DODGERBLUE.withAlpha(0.8),
+    
+  },
+});
+
+var REDCylinder = viewer.entities.add({
+  name: "Airspaces Class",
+  position: Cesium.Cartesian3.fromDegrees(-120.0, 45.0, 50000.0),
+  cylinder: {
+    length: 150000.0,
+    topRadius: 200000.0,
+    bottomRadius: 200000.0,
+    material: Cesium.Color.RED.withAlpha(0.7),
+    
+  },
+});
+
+
+//Point
+var point = viewer.entities.add({
+    name: "Start Waypoint for Route segment 1",
+    position: Cesium.Cartesian3.fromDegrees(-75, 39, 50000.0),
+    point: {
+      pixelSize: 10,
+      color: Cesium.Color.BLUE,
+    },
+  });
+
+
+var point = viewer.entities.add({
+    name: "End Waypoint for Route segment 1",
+    position: Cesium.Cartesian3.fromDegrees(-125, 39, 50000.0),
+    point: {
+      pixelSize: 10,
+      color: Cesium.Color.BLUE,
+    },
+  });
+  
+var point = viewer.entities.add({
+    name: "End Waypoint for Route segment 2",
+    position: Cesium.Cartesian3.fromDegrees(-125, 50, 50000.0),
+    point: {
+      pixelSize: 10,
+      color: Cesium.Color.BLUE,
+    },
+  });
+
+var point = viewer.entities.add({
+    name: "End Waypoint for Route segment 3",
+    position: Cesium.Cartesian3.fromDegrees(-150, 65, 50000.0),
+    point: {
+      pixelSize: 10,
+      color: Cesium.Color.BLUE,
+    },
+  });//Sandcastle_End
+    Sandcastle.finishedLoading();
+}
+if (typeof Cesium !== 'undefined') {
+    window.startupCalled = true;
+    startup(Cesium);
+}
+</script>
+</body>
+</html>
